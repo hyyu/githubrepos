@@ -19,7 +19,7 @@ class MainRepository {
 
     suspend fun fetchRepos(): Flow<DataState<List<RepoObjectResponse>>> = flow {
         try {
-            val repos = apiController.fetchRepos().also { response ->
+            apiController.fetchRepos().also { response ->
                 if (response.isSuccessful) emit(
                     DataState.Success(
                         response.body()
