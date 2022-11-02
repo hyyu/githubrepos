@@ -1,5 +1,6 @@
 package com.hyyu.githubrepos.network
 
+import com.hyyu.githubrepos.network.model.RepoObjectResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

@@ -50,12 +50,12 @@ class ReposAdapter(val context: Context, val onItemClickListener: ItemClickListe
         }
     }
 
-    private fun getItem(position: Int) = items[position]
+    fun getItem(position: Int) = items[position]
 
     inner class RepoViewHolder(val binding: CellRepoBinding) : RecyclerView.ViewHolder(binding.root) {
         init {
             onItemClickListener?.let { listener ->
-                itemView.setOnClickListener { listener.onItemClicked(bindingAdapterPosition) }
+                binding.root.setOnClickListener { listener.onItemClicked(bindingAdapterPosition) }
             }
         }
     }

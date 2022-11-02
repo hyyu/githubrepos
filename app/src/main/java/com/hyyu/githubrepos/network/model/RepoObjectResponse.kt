@@ -1,4 +1,4 @@
-package com.hyyu.githubrepos.network
+package com.hyyu.githubrepos.network.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -22,5 +22,9 @@ data class RepoObjectResponse(
 
     @SerializedName("watchers")
     @Expose
-    val watchers: Int
+    val watchers: Int,
+
+    @SerializedName("description")
+    @Expose
+    val description: String?
 )
