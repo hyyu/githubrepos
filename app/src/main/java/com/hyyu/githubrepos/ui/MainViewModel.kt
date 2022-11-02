@@ -19,6 +19,8 @@ class MainViewModel : ViewModel() {
         const val TAG = "MainViewModel"
     }
 
+    // private var toggle = true
+
     private val mainRepository: MainRepository = MainRepository()
 
     private val _reposListLiveData = MutableLiveData<List<RepoModel>>()
@@ -43,6 +45,8 @@ class MainViewModel : ViewModel() {
                         is DataState.Success -> {
                             val mappedRepos = dataState.data.map { it.toModel() }
                             _reposListLiveData.postValue(mappedRepos)
+                            // _reposListLiveData.postValue(if (toggle) mappedRepos else emptyList())
+                            // toggle = !toggle
                         }
                         is DataState.Error -> {
                             _snackbarLiveData.postValue(dataState.exception.message)
@@ -54,4 +58,3 @@ class MainViewModel : ViewModel() {
     }
 
 }
-
