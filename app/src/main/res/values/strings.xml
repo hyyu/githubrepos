@@ -1,3 +1,9 @@
 <resources>
+    <!-- App name -->
     <string name="app_name">Github Repos</string>
+
+    <!-- MainActivity strings -->
+    <string name="main_page_repos_title">Listed repositories</string>
+    <string name="main_page_no_repos_found">No repository found</string>
+
 </resources>
