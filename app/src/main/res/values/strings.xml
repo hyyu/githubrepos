@@ -22,6 +22,8 @@
     <string name="cell_quantity_one">1 %1$s</string>
     <string name="cell_quantity_more">%1$d %2$s</string>
 
+    <!-- DetailActivity strings -->
+    <string name="detail_page_title">Repository detail</string>
     <string name="detail_no_description">No description available</string>
 
 </resources>

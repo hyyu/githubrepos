@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
     }
 
     private fun setupReposList() {
-        adapter = ReposAdapter(this)
+        adapter = ReposAdapter(this, this)
         binding.rvRepos.layoutManager = LinearLayoutManager(this)
         binding.rvRepos.adapter = adapter
     }

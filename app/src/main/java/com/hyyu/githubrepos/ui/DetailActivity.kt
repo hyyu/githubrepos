@@ -20,6 +20,8 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.title = getString(R.string.detail_page_title)
+
         val fullName = intent.getStringExtra(REPOSITORY_FULL_NAME)
         val description = intent.getStringExtra(REPOSITORY_DESCRIPTION) ?: getString(R.string.detail_no_description)
 

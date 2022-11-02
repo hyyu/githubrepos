@@ -8,7 +8,7 @@ import com.hyyu.githubrepos.R
 import com.hyyu.githubrepos.databinding.CellRepoBinding
 import com.hyyu.githubrepos.ui.model.RepoModel
 
-class ReposAdapter(val context: Context, val onItemClickListener: ItemClickListener? = null)
+class ReposAdapter(private val context: Context, val onItemClickListener: ItemClickListener? = null)
     : RecyclerView.Adapter<ReposAdapter.RepoViewHolder>() {
 
     var items: List<RepoModel> = mutableListOf()
