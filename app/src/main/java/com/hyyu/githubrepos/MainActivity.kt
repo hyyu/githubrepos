@@ -17,5 +17,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         setContentView(binding.root)
 
+        viewModel.launchEvent(MainEvent.FetchRepos)
     }
 }
