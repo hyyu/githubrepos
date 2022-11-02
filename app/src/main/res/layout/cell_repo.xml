@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="@string/cell_icon_repo_description"
+        android:src="@drawable/icon_repo"
+        app:layout_constraintBottom_toBottomOf="@id/layout_repo_info"
+        app:layout_constraintEnd_toStartOf="@id/layout_repo_info"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/layout_repo_info" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_repo_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_arrow"
+        app:layout_constraintStart_toEndOf="@id/iv_icon"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_forks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="JetBrains/JPS" />
+
+        <TextView
+            android:id="@+id/tv_forks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_open_issues"
+            app:layout_constraintStart_toStartOf="@id/tv_full_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_full_name"
+            tools:text="8 forks" />
+
+        <TextView
+            android:id="@+id/tv_open_issues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_watchers"
+            app:layout_constraintStart_toStartOf="@id/tv_full_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_forks"
+            tools:text="0 open issue" />
+
+        <TextView
+            android:id="@+id/tv_watchers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tv_full_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_open_issues"
+            tools:text="24 watchers" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="@string/cell_icon_chevron_description"
+        android:src="@drawable/ic_chevron_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/layout_repo_info"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
