@@ -1,5 +1,6 @@
 package com.hyyu.githubrepos.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,10 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.hyyu.githubrepos.R
 import com.hyyu.githubrepos.databinding.ActivityMainBinding
+import com.hyyu.githubrepos.ui.adapter.ItemClickListener
 import com.hyyu.githubrepos.ui.adapter.ReposAdapter
 import com.hyyu.githubrepos.ui.event.MainEvent
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ItemClickListener {
 
     private val viewModel: MainViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
@@ -49,6 +51,16 @@ class MainActivity : AppCompatActivity() {
         binding.rvRepos.adapter = adapter
     }
 
+    override fun onItemClicked(position: Int) {
+        val item = adapter.getItem(position)
+        val intent = Intent(this, DetailActivity::class.java)
+
+        intent.putExtra(DetailActivity.REPOSITORY_FULL_NAME, item.fullName)
+        intent.putExtra(DetailActivity.REPOSITORY_DESCRIPTION, item.description)
+
+        startActivity(intent)
+    }
+
     private fun setVisibilityAccordingToFetchResult(isError: Boolean) {
         binding.apply {
             if (isError) {
@@ -63,7 +75,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeReposList() {
         viewModel.reposListLiveData.observe(this) { repos ->
-            Log.v("FetchRepos", "repos: $repos")
             adapter.items = repos
             setVisibilityAccordingToFetchResult(repos.isEmpty())
         }

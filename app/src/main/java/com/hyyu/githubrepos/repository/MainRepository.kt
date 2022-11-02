@@ -2,7 +2,7 @@ package com.hyyu.githubrepos.repository
 
 import com.hyyu.githubrepos.injection.Injection
 import com.hyyu.githubrepos.network.HomeApi
-import com.hyyu.githubrepos.network.RepoObjectResponse
+import com.hyyu.githubrepos.network.model.RepoObjectResponse
 import com.hyyu.githubrepos.network.model.DataState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
