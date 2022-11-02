@@ -6,4 +6,20 @@
     <string name="main_page_repos_title">Listed repositories</string>
     <string name="main_page_no_repos_found">No repository found</string>
 
+    <!-- Recycler View strings -->
+    <string name="cell_icon_repo_description">Repo icon</string>
+    <string name="cell_icon_chevron_description">Chevron icon</string>
+
+    <string name="label_fork_sing">fork</string>
+    <string name="label_open_issues_sing">open issue</string>
+    <string name="label_watchers_sing">watcher</string>
+
+    <string name="label_fork_plural">forks</string>
+    <string name="label_open_issues_plural">open issues</string>
+    <string name="label_watchers_plural">watchers</string>
+
+    <string name="cell_quantity_zero">No %1$s</string>
+    <string name="cell_quantity_one">1 %1$s</string>
+    <string name="cell_quantity_more">%1$d %2$s</string>
+
 </resources>
